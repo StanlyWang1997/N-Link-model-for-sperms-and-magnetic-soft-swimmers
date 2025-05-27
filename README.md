@@ -5,5 +5,5 @@ Alouges, F., DeSimone, A., Giraldi, L., & Zoppello, M. (2015). Can Magnetic Mult
 Alouges, F., DeSimone, A., Giraldi, L., & Zoppello, M. (2013). Self-propulsion of slender micro-swimmers by curvature control: N-link swimmers. International Journal of Non-Linear Mechanics, 56, 132–141. https://doi.org/10.1016/j.ijnonlinmec.2013.04.012
 
 
-MagDrivenFila: Non-dimensional solutions of an ODE system
+MagDrivenFila: Non-dimensional solutions of an ODE system;
 N_link_Swimmers: Solutions of the system
