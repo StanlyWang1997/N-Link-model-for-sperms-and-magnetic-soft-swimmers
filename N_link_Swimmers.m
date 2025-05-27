@@ -1,4 +1,14 @@
-% N+2 parameters solutions in a system of ODEs
+% *******************************************
+% Main function: integrating the dynamics equation of an elastic microfilament
+% *******************************************
+%  The results in the reference titled "Can Magnetic Multilayers Propel Artificial Microswimmers Mimicking Sperm Cells?" are reproduced throughout the code
+%
+%  Returns N+2 parameters solutions in a system of ODEs for each time (contained in the 'traj' array) : 
+%   * x and y are the coordinates of the end of the first link
+%   * theta is the orientation of the first link
+%   * alpha2 to alphaN are the 'shape angles' : angle between i+1-th and i-th link
+% *******************************************
+%
 
 clear all; close all;
 
@@ -65,14 +75,14 @@ eta = [zeta_head, zetat_tail*ones(1,N-1)];
 Sp = L_tail*(omega*zetan_tail/(E*J))^(1/4);  % sperm number characterizes the ratio between viscous force and elastic force.
 
 %% Oscillating magnetic field
-Bx = @(t) 0.01; % the magnetic field strength along x [T];
-By = @(t) 0.01*sin(omega*t); % the magnetic field strength along y [T];
+% Bx = @(t) 0.01; % the magnetic field strength along x [T];
+% By = @(t) 0.01*sin(omega*t); % the magnetic field strength along y [T];
 
 %% Circle motion
-% Tmax = 20; % [s]
-% theta = @(t) 2*pi*t/Tmax;
-% Bx = @(t) 0.01*sin(theta(t))+0.01*sin(omega*t)*(cos(theta(t)));
-% By = @(t) 0.01*cos(theta(t))+0.01*sin(omega*t)*(-sin(theta(t)));
+Tmax = 20; % [s]
+theta = @(t) 2*pi*t/Tmax;
+Bx = @(t) 0.01*sin(theta(t))+0.01*sin(omega*t)*(cos(theta(t)));
+By = @(t) 0.01*cos(theta(t))+0.01*sin(omega*t)*(-sin(theta(t)));
 
 %% Turning abruptly; thete(t) experiences a sudden jump from 0 to pi/2 aroud t = Tmax/2
 % Tmax = 8; % [s]
